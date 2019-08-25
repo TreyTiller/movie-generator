@@ -31,14 +31,14 @@ $('.start-over').on('click', function () {
 function watchTitleForm() {
     $('.user-title-form').submit(event => {
         event.preventDefault();
-        let title = $('.search-bar').val("");
+        let title = $('.search-bar').val();
         console.log(`Im Working: ${title}`);
         getMovies(title);
     });
 }
 
 function getMovies(title){
-    fetch("https://tastedive.com/api/similar" + '?' + `q=${title}` + '&' + `k=344207-MovieGen-7ZJ76CWA`, {mode: 'no-cors'})
+    fetch("https://tastedive.com/api/similar?callback=?" + `q=${encodeURIComponent(title)}` + '&' + `k=344207-MovieGen-7ZJ76CWA`, {mode: 'no-cors'})
     //.then(response => response.json())
     .then(responseJson => console.log(responseJson))
 }
