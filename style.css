@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    border: 1px solid black;
+}
+
+.search-bar {
+    border: 1px solid black;
+}
