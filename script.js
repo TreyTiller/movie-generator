@@ -39,7 +39,7 @@ function watchTitleForm() {
 
 function getMovies(title){
     fetch("https://tastedive.com/api/similar?callback=&" + `q=${encodeURIComponent(title)}` + '&' + 'type=movies' + '&' + `k=344207-MovieGen-7ZJ76CWA`, {mode: 'no-cors'})
-        //.then(results => results.json())
+        .then(results => results.json())
         .then(responseJson => console.log(responseJson))
 }
 
