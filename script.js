@@ -80,7 +80,7 @@ function displayResults(data) {
     $('.user-results-screen').append(`
         <section class="single-result">
             <div class="poster-container">
-                <img id="poster" src="" alt="">
+                <img id="poster" src="${data.Poster}" alt="Movie Poster">
             </div>
             
             <div class="title-container">
@@ -88,15 +88,15 @@ function displayResults(data) {
             </div>
 
             <div class="description-container">
-                <h3 id="description"></h3>
+                <h3 id="description">${data.Plot}</h3>
             </div>
 
-            <div class="trailer-container">
-                <a id="trailer" href=""></a>
+            <div class="rating-container">
+                <h5 id="rating">${data.Metascore}</h5>
             </div>
 
             <div class="learn-more-container">
-                <a id="learn-more" href=""></a>
+                <a id="learn-more" href="${data.Website}" target="_blank">Learn More</a>
             </div>
         </section>
     `);
