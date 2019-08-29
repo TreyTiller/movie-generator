@@ -3,6 +3,9 @@
 const tdApiKey = '344207-MovieGen-7ZJ76CWA';
 const tasteDive = 'https://tastedive.com/api/similar';
 
+const omdbKey = '3e8e016d';
+const omdb = "http://www.omdbapi.com/?apikey='3e8e016d'&"
+
 /*SCRIPT FOR ALL FUNCTIONING BUTTONS*/
 
 $('.title').on('click', function () {
@@ -41,8 +44,8 @@ function getMovies(title) {
     var params = {
         q: title,
         type: 'movies',
-        info: 1,
-        limit: 20,
+        info: 0,
+        limit: 3,
         k: '344207-MovieGen-7ZJ76CWA',
         callback: 'result'
     };
@@ -56,24 +59,39 @@ function getMovies(title) {
         if (output.Similar.Results.length == 0) {
             alert("Something smells fishy... we can't seem to find a movie quite like " + title);
         } else {
-            displayResults(output.Similar.Results);
+            for(let i = 0; i < output.Similar.Results.length; i++) {
+                titleInfo(output.Similar.Results[i].Name);
+            }
+            
         }
     })
+};
+
+function titleInfo(title) {
+    
+    fetch(`http://www.omdbapi.com/?apikey=3e8e016d&t=${title}`)
+    .then(res => res.json())
+    .then(data => {console.log(data)
+    
+        displayResults(data);
+    
+})
+    
 }
 /*WHAT NEEDS TO HAPPEN IS THE RESULTS OF THIS GETMOVIE FUNCTION GET FED INTO AND CALL
     A FUNCTION CALLED GETTITLEINFO WHICH REACHES OUT TO OMDB AND THEN WE USE THEIR RESPONSE
     TO DISPLAY SUGGESTION DATA*/
 
-/*function displayResults(movieApiResults) {
-    $('.user-results-screen').empty();
-    $.each('.user-results-screen').append(`
+function displayResults(data) {
+    //$('.user-results-screen').empty();
+    $('.user-results-screen').append(`
         <section class="single-result">
             <div class="poster-container">
                 <img id="poster" src="" alt="">
             </div>
             
             <div class="title-container">
-                <h2>${movieApiResults.name}</h2>
+                <h2>${data.Title}</h2>
             </div>
 
             <div class="description-container">
@@ -90,6 +108,6 @@ function getMovies(title) {
         </section>
     `);
     $('.user-results-screen').removeClass('hidden');
-}*/
+}
 
 $(watchTitleForm)
