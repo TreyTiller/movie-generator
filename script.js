@@ -8,26 +8,15 @@ const omdb = "http://www.omdbapi.com/?apikey='3e8e016d'&"
 
 /*SCRIPT FOR ALL FUNCTIONING BUTTONS*/
 
-$('.title').on('click', function () {
-    //alert('it worked');
-    $('.home-screen').addClass('hidden');
-    $('.movie-title-screen').removeClass('hidden');
-});
-
-$('.genre').on('click', function () {
-    $('.home-screen').addClass('hidden');
-    $('.genre-screen').removeClass('hidden');
-});
-
 $('.start-over').on('click', function () {
-    $('.home-screen').removeClass('hidden');
-    $('.genre-screen').addClass('hidden');
-});
-
-$('.start-over').on('click', function () {
-    $('.home-screen').removeClass('hidden');
-    $('.movie-title-screen').addClass('hidden');
-});
+    $('.introduction').removeClass('hidden');
+    $('.user-title-form').removeClass('hidden');
+    $('.search-bar').val("");
+    $('.user-results-screen').addClass('hidden');
+    $('.user-results-screen').empty();
+    $('.start-over').addClass('hidden');
+    
+})
 
 /*TITLE FETCH REQUEST*/
 
@@ -35,6 +24,9 @@ function watchTitleForm() {
     $('.user-title-form').submit(event => {
         event.preventDefault();
         let title = $('.search-bar').val();
+        $('.introduction').addClass('hidden');
+        $('.start-over').removeClass('hidden');
+        $('.user-title-form').addClass('hidden');
         console.log(`Im Working: ${title}`);
         getMovies(title);
     });
@@ -45,7 +37,7 @@ function getMovies(title) {
         q: title,
         type: 'movies',
         info: 0,
-        limit: 3,
+        limit: 20,
         k: '344207-MovieGen-7ZJ76CWA',
         callback: 'result'
     };
@@ -83,7 +75,8 @@ function titleInfo(title) {
     TO DISPLAY SUGGESTION DATA*/
 
 function displayResults(data) {
-    //$('.user-results-screen').empty();
+    /*$('.user-results-screen').empty();
+    for(let i = 0; i < data.length; i++) {*/
     $('.user-results-screen').append(`
         <section class="single-result">
             <div class="poster-container">
