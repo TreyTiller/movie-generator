@@ -21,7 +21,7 @@
 
     <section class="movie-title-screen">
         <form class="user-title-form">
-            <input class="search-bar" type="text" placeholder="Movie Title">
+            <input class="search-bar" type="text" placeholder="Movie Title" oninvalid="this.setCustomValidity('Give me a movie title!')">
             <button type="submit" class="submit">Submit</button>
         </form>
         <button class="start-over hidden">Start Over</button>
