@@ -9,13 +9,12 @@ const omdb = "http://www.omdbapi.com/?apikey='3e8e016d'&"
 /*SCRIPT FOR ALL FUNCTIONING BUTTONS*/
 
 $('.start-over').on('click', function () {
-    $('.introduction').removeClass('hidden');
+    $('.restart').removeClass('hidden');
     $('.user-title-form').removeClass('hidden');
     $('.search-bar').val("");
     $('.user-results-screen').addClass('hidden');
     $('.user-results-screen').empty();
     $('.start-over').addClass('hidden');
-    
 })
 
 /*TITLE FETCH REQUEST*/
@@ -49,7 +48,11 @@ function getMovies(title) {
     })
     .done(function (output) {
         if (output.Similar.Results.length == 0) {
-            alert("Something smells fishy... we can't seem to find a movie quite like " + title);
+            alert("Something smells fishy... check to make sure your spelling is correct!");
+            $('.error').removeClass('hidden');
+            $('.user-title-form').removeClass('hidden');
+            $('.start-over').addClass('hidden');
+            $('.search-bar').val("");
         } else {
             for(let i = 0; i < output.Similar.Results.length; i++) {
                 titleInfo(output.Similar.Results[i].Name);
