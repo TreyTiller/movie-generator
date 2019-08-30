@@ -15,7 +15,10 @@ $('.start-over').on('click', function () {
     $('.user-results-screen').addClass('hidden');
     $('.user-results-screen').empty();
     $('.start-over').addClass('hidden');
+    $('.continous-search').addClass('hidden');
 })
+
+
 
 /*TITLE FETCH REQUEST*/
 
@@ -24,11 +27,17 @@ function watchTitleForm() {
         event.preventDefault();
         let title = $('.search-bar').val();
         $('.introduction').addClass('hidden');
-        $('.start-over').removeClass('hidden');
         $('.user-title-form').addClass('hidden');
         console.log(`Im Working: ${title}`);
         getMovies(title);
     });
+    $('.header-form').submit(event => {
+        event.preventDefault();
+        let title = $('.search-bar-header').val();
+        $('.error').addClass('hidden');
+        console.log(`Im Working 2: ${title}`);
+        getMovies(title);
+    })
 }
 
 function getMovies(title) {
@@ -48,11 +57,12 @@ function getMovies(title) {
     })
     .done(function (output) {
         if (output.Similar.Results.length == 0) {
-            alert("Something smells fishy... check to make sure your spelling is correct!");
             $('.error').removeClass('hidden');
-            $('.user-title-form').removeClass('hidden');
-            $('.start-over').addClass('hidden');
+            $('.user-title-form').addClass('hidden');
             $('.search-bar').val("");
+            $('.continous-search').removeClass('hidden');
+            $('.restart').addClass('hidden');
+            $('.search-bar-header').val("");
         } else {
             for(let i = 0; i < output.Similar.Results.length; i++) {
                 titleInfo(output.Similar.Results[i].Name);
@@ -104,6 +114,7 @@ function displayResults(data) {
         </section>
     `);
     $('.user-results-screen').removeClass('hidden');
+    $('.restart-footer').removeClass('hidden')
 }
 
 $(watchTitleForm)

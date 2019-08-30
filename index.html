@@ -12,20 +12,26 @@
 </head>
 
 <body>
+    <header class="continous-search hidden">
+        <form class="header-form">
+            <input class="search-bar-header" type="text" placeholder="Movie Title" required>
+            <button type="submit" class="submit">Submit</button>
+        </form>
+    </header>
     <section class="introduction">
-            <h3> text explaining how to use the appliaction and an introduction-- Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Necessitatibus explicabo nostrum distinctio consectetur doloremque! Repudiandae
-                incidunt at adipisci culpa amet illo, ipsa et? Animi corrupti et totam repellendus praesentium sed!</h3>
-            
+        <h3> text explaining how to use the appliaction and an introduction-- Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Necessitatibus explicabo nostrum distinctio consectetur doloremque! Repudiandae
+            incidunt at adipisci culpa amet illo, ipsa et? Animi corrupti et totam repellendus praesentium sed!</h3>
+
     </section>
 
     <section class="restart hidden">
-            <h3>Oh, I'm having fun! Let's do another one!</h3>
+        <h3>Oh, I'm having fun! Let's do another one!</h3>
     </section>
 
     <section class="error hidden">
         <img src="/IMG/icons8-yoda-100.png" alt="Yoda Icon">
-        <h3>I'm having trouble finding that. If you want some help try some of my favorite films!</h3>
+        <h3>Hmmmmmm...Trouble finding that I am having. Suggestions I will give!</h3>
         <ul>
             <li>Interstellar</li>
             <li>Batman Begins</li>
@@ -41,14 +47,16 @@
 
     <section class="movie-title-screen">
         <form class="user-title-form">
-            <input class="search-bar" type="text" placeholder="Movie Title" oninvalid="this.setCustomValidity('Give me a movie title!')">
+            <input class="search-bar" type="text" placeholder="Movie Title" required>
             <button type="submit" class="submit">Submit</button>
         </form>
-        <button class="start-over hidden">Start Over</button>
     </section>
 
     <section class="user-results-screen hidden"></section>
 
+    <footer class="restart-footer hidden">
+        <button class="start-over">Start Over</button>
+    </footer>
     <script src="script.js"></script>
 </body>
 
