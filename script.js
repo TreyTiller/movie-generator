@@ -28,6 +28,7 @@ function watchTitleForm() {
         let title = $('.search-bar').val();
         $('.introduction').addClass('hidden');
         $('.user-title-form').addClass('hidden');
+        $('.continous-search').removeClass('hidden');
         console.log(`Im Working: ${title}`);
         getMovies(title);
     });
