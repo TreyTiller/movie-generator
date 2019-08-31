@@ -59,7 +59,7 @@ function getMovies(title) {
     .done(function (output) {
         if (output.Similar.Results.length == 0) {
             $('.error').removeClass('hidden');
-            $('.user-title-form').addClass('hidden');
+            $('.movie-title-screen').addClass('hidden');
             $('.search-bar').val("");
             $('.continous-search').removeClass('hidden');
             $('.restart').addClass('hidden');
@@ -115,7 +115,8 @@ function displayResults(data) {
         </section>
     `);
     $('.user-results-screen').removeClass('hidden');
-    $('.restart-footer').removeClass('hidden')
+    $('.restart-footer').removeClass('hidden');
+    $('.movie-title-screen').addClass('hidden');
 }
 
 $(watchTitleForm)

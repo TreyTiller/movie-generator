@@ -7,30 +7,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Generate a movie based on what genres you like or similarity!">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:200,300,400,600,700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Movie Generator | NOT THE ACTUAL TITLE</title>
 </head>
 
 <body>
+
     <header class="continous-search hidden">
         <form class="header-form">
             <input class="search-bar-header" type="text" placeholder="Movie Title" required>
-            <button type="submit" class="submit">Submit</button>
+            <button type="submit-header" class="submit">Submit</button>
         </form>
     </header>
     <section class="introduction">
-        <h3> text explaining how to use the appliaction and an introduction-- Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Necessitatibus explicabo nostrum distinctio consectetur doloremque! Repudiandae
-            incidunt at adipisci culpa amet illo, ipsa et? Animi corrupti et totam repellendus praesentium sed!</h3>
+        <div class="hal">
+            <img class="hal-img" src="IMG/icons8-hal-9000-100.png" alt="Hal Robot Icon">
+        </div>
+        <h3 class="hal-intro"> I'm Hal! You might know me from Stanley Kubrik's 2001: A Space Odyssey! I've been
+            reprogrammed to help you
+            find amazing movies to watch. All you have to do is enter a movie title you enjoy, and I'll suggest some
+            films that you might enjoy!
+        </h3>
 
     </section>
 
     <section class="restart hidden">
+        <img class="hal-img" src="IMG/icons8-hal-9000-100.png" alt="Hal Robot Icon">
         <h3>Oh, I'm having fun! Let's do another one!</h3>
     </section>
 
     <section class="error hidden">
-        <img src="/IMG/icons8-yoda-100.png" alt="Yoda Icon">
+        <img class="hal-img" src="/IMG/icons8-hal-9000-100.png" alt="Hal Robot Icon">
         <h3>Hmmmmmm...Trouble finding that I am having. Suggestions I will give!</h3>
         <ul>
             <li>Interstellar</li>

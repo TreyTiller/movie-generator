@@ -1,15 +1,68 @@
+/*MAIN*/
+
 * {
     box-sizing: border-box;
+    font-family: 'Catamaran', sans-serif, Helvetica;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .hidden {
     display: none;
 }
 
+body {
+    background-image: linear-gradient( rgba(29, 29, 29, 0.5), rgba(27, 27, 27, 0.5)), url(IMG/movie-theater-background.jpg);
+    background-repeat: no-repeat; 
+    background-position: center center;
+    background-attachment: fixed;       
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 0px;
+}
+
+.hal {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+    margin-bottom: 15px;
+}
+.hal-intro {
+    color: whitesmoke;
+    text-align: center;
+    padding: 30px;
+    font-size: 18px;
+}
+
+.user-title-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    width: auto;
+}
+
+.search-bar {
+    text-align: center;
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid rgb(184, 184, 184);
+}
+
+.submit {
+    background-color: rgba(12, 12, 12, 0.712);
+    color: white;
+    border-radius: 8px;
+    margin-right: 70px;
+    margin-left: 70px;
+    margin-top: 50px;
+    border: 1px solid rgb(184, 184, 184);
+}
+
+
 button {
     border: 1px solid black;
 }
 
-.search-bar {
-    border: 1px solid black;
-}
