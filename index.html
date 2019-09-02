@@ -17,7 +17,7 @@
     <header class="continous-search hidden">
         <form class="header-form">
             <input class="search-bar-header" type="text" placeholder="Movie Title" required>
-            <button type="submit-header" class="submit">Submit</button>
+            <button type="submit-header" class="submit-header">Submit</button>
         </form>
     </header>
     <section class="introduction">
@@ -33,23 +33,46 @@
     </section>
 
     <section class="restart hidden">
-        <img class="hal-img" src="IMG/icons8-hal-9000-100.png" alt="Hal Robot Icon">
+        <div class="hal">
+            <img class="hal-img" src="IMG/icons8-hal-9000-100.png" alt="Hal Robot Icon">
+        </div>
         <h3>Oh, I'm having fun! Let's do another one!</h3>
     </section>
 
     <section class="error hidden">
-        <img class="hal-img" src="/IMG/icons8-hal-9000-100.png" alt="Hal Robot Icon">
-        <h3>Hmmmmmm...Trouble finding that I am having. Suggestions I will give!</h3>
-        <ul>
-            <li>Interstellar</li>
-            <li>Batman Begins</li>
-            <li>Taxi Driver</li>
-            <li>Star Wars</li>
-            <li>The Pink Panther</li>
-            <li>BlindSpotting</li>
-            <li>Pulp Fiction</li>
-            <li>Top Gun</li>
-            <li>Lethal Weapon</li>
+        <div class="hal-error-container">
+            <img class="hal-img" src="IMG/icons8-hal-9000-100.png" alt="Hal Robot Icon">
+        </div>
+        <h3 class="hal-error">Hmmmmmm...I can't seem to find that one. If you would like I can give some suggestions!
+        </h3>
+        <ul class="suggestions">
+            <li><a href="https://www.themoviedb.org/movie/62-2001-a-space-odyssey?language=en-US" target="_blank">
+                    <img class="poster" src="IMG/2001.jpg" alt="2001: A Space Odyssey">
+                </a></li>
+            <li><a href="https://www.themoviedb.org/movie/272-batman-begins?language=en-US" target="_blank">
+                <img class="poster" src="IMG/batman.jpg" alt="Batman Begins">
+                </a></li>
+            <li><a href="https://www.themoviedb.org/movie/103-taxi-driver?language=en-US" target="_blank">
+                <img class="poster" src="IMG/taxi.jpg" alt="Taxi Driver">
+                </a></li>
+            <li><a href="https://www.themoviedb.org/movie/157336-interstellar?language=en-US" target="_blank">
+                <img class="poster" src="IMG/interstellar.jpg" alt="Interstellar">
+                </a></li>
+            <li><a href="https://www.themoviedb.org/movie/489930-blindspotting?language=en-US" target="_blank">
+                <img class="poster" src="IMG/blind.jpg" alt="Blindspotting">
+                </a></li>
+            <li><a href="https://www.themoviedb.org/movie/680-pulp-fiction?language=en-US" target="_blank">
+                <img class="poster" src="IMG/pulp.jpg" alt="Pulp Fiction">
+                </a></li>
+            <li><a href="https://www.themoviedb.org/movie/744-top-gun?language=en-US" target="_blank">
+                <img class="poster" src="IMG/top.jpg" alt="Top Gun">
+                </a></li>
+            <li><a href="https://www.themoviedb.org/movie/944-lethal-weapon-4?language=en-US" target="_blank">
+                <img class="poster" src="IMG/lethal.jpg" alt="Lethal Weapon">
+                </a></li>
+            <li><a href="https://www.themoviedb.org/movie/9615-the-fast-and-the-furious-tokyo-drift?language=en-US" target="_blank">
+                <img class="poster" src="IMG/drift.jpg" alt="Fast and Furious">
+                </a></li>
         </ul>
     </section>
 

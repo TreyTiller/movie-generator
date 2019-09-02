@@ -28,6 +28,7 @@ body {
     margin: 50px;
     margin-bottom: 15px;
 }
+
 .hal-intro {
     color: whitesmoke;
     text-align: center;
@@ -65,4 +66,63 @@ body {
 button {
     border: 1px solid black;
 }
+
+
+.header-form {
+    display: flex;
+    padding: 30px;
+    justify-content: center;
+}
+
+.search-bar-header {
+    width: 250px;
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(184, 184, 184); 
+}
+
+.submit-header {
+    background-color: rgba(12, 12, 12, 0.712);
+    color: white;
+    border-radius: 8px;
+    border: 1px solid rgb(184, 184, 184);
+    margin-left: 15px;
+    width: 100px;
+}
+
+.hal-error-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.hal-error {
+    color: whitesmoke;
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.suggestions {
+    color: whitesmoke;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.poster {
+    width: auto;
+    height: 150px;
+}
+
+
+
+
+
 

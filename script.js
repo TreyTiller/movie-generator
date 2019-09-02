@@ -119,4 +119,6 @@ function displayResults(data) {
     $('.movie-title-screen').addClass('hidden');
 }
 
+
+
 $(watchTitleForm)
