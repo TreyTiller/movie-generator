@@ -6,15 +6,18 @@ const tasteDive = 'https://tastedive.com/api/similar';
 const omdbKey = '3e8e016d';
 const omdb = "http://www.omdbapi.com/?apikey='3e8e016d'&"
 
+const tmdbKey = "16242317e9658da6c8ea5181a70fc442"
+const tmdb = "https://api.themoviedb.org/3/search/movie?api_key=16242317e9658da6c8ea5181a70fc442&language=en-US&"
+
 /*SCRIPT FOR ALL FUNCTIONING BUTTONS*/
 
 $('.start-over').on('click', function () {
     $('.restart').removeClass('hidden');
-    $('.user-title-form').removeClass('hidden');
+    $('.movie-title-screen').removeClass('hidden');
     $('.search-bar').val("");
     $('.user-results-screen').addClass('hidden');
     $('.user-results-screen').empty();
-    $('.start-over').addClass('hidden');
+    $('.restart-footer').addClass('hidden');
     $('.continous-search').addClass('hidden');
 })
 
@@ -29,6 +32,7 @@ function watchTitleForm() {
         $('.introduction').addClass('hidden');
         $('.user-title-form').addClass('hidden');
         $('.continous-search').removeClass('hidden');
+        $('.restart').addClass('hidden');
         console.log(`Im Working: ${title}`);
         getMovies(title);
     });
@@ -93,25 +97,30 @@ function displayResults(data) {
     for(let i = 0; i < data.length; i++) {*/
     $('.user-results-screen').append(`
         <section class="single-result">
+        <a class="full-link" href="${data.Website}" target="_blank">
             <div class="poster-container">
                 <img id="poster" src="${data.Poster}" alt="Movie Poster">
             </div>
+            <div class="main-container">
+                <div class="title-container">
+                    <h2 id="title">${data.Title}</h2>
+                </div>
+
+                <div class="description-container">
+                    <h3 id="description">${data.Plot}</h3>
+                </div>
             
-            <div class="title-container">
-                <h2>${data.Title}</h2>
-            </div>
+            <div class="extra-container">
+                <div class="rating-container">
+                    <h5 id="rating">${data.Metascore}</h5>
+                </div>
 
-            <div class="description-container">
-                <h3 id="description">${data.Plot}</h3>
+                <div class="learn-more-container">
+                    <a id="learn-more" href="${data.Website}" target="_blank">Learn More</a>
+                </div>
             </div>
-
-            <div class="rating-container">
-                <h5 id="rating">${data.Metascore}</h5>
             </div>
-
-            <div class="learn-more-container">
-                <a id="learn-more" href="${data.Website}" target="_blank">Learn More</a>
-            </div>
+            </a>
         </section>
     `);
     $('.user-results-screen').removeClass('hidden');

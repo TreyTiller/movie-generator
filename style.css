@@ -121,6 +121,92 @@ button {
     height: 150px;
 }
 
+.restart-text {
+    color: whitesmoke;
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.single-result {
+    display: flex;
+    color: whitesmoke;
+    border: 1px solid white;
+    margin: 15px;
+    border-radius: 5px;
+    margin: 8px;
+    padding: 10px;
+    background-color: rgba(12, 12, 12, 0.63);
+    box-shadow: -2px 3px rgba(19, 19, 19, 0.63);;
+}
+
+#poster {
+    height: 180px;
+    width: auto;
+}
+
+.poster-container {
+    height: 190px;
+    width: auto;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.extra-container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-evenly;
+}
+
+#title {
+    margin: 0px;
+    padding-left: 20px;
+    padding-bottom: 10px
+}
+
+#description {
+    margin: 0px;
+    padding-left: 15px;
+    font-size: 15px;
+}
+
+#rating {
+    padding-top: 8px;
+    margin:0px;
+    display: none;
+}
+
+#learn-more {
+    padding-top: 8px;
+    margin: 0px;
+    display: none;
+}
+
+.full-link {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.start-over {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(12, 12, 12, 0.63);
+    border: 1px solid white;
+    border-radius: 8px;
+    width: 200px;
+    height: 40px;
+    color: white;
+    margin: 0 auto;
+}
+
+
+
+
 
 
 
