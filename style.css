@@ -14,7 +14,7 @@
 body {
     background-image: linear-gradient( rgba(29, 29, 29, 0.5), rgba(27, 27, 27, 0.5)), url(IMG/movie-theater-background.jpg);
     background-repeat: no-repeat; 
-    background-position: center center;
+    background-position: top center;
     background-attachment: fixed;       
     background-size: cover;
     margin: 0px;
