@@ -16,8 +16,6 @@ body {
     background-repeat: no-repeat; 
     background-position: center center;
     background-attachment: fixed;       
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
     margin: 0px;
 }
@@ -137,7 +135,7 @@ button {
     margin: 8px;
     padding: 10px;
     background-color: rgba(12, 12, 12, 0.63);
-    box-shadow: -2px 3px rgba(19, 19, 19, 0.63);;
+    box-shadow: -2px 3px rgba(19, 19, 19, 0.548);;
 }
 
 #poster {
@@ -166,13 +164,15 @@ button {
 #title {
     margin: 0px;
     padding-left: 20px;
-    padding-bottom: 10px
+    padding-bottom: 10px;
+    font-weight: 600;
 }
 
 #description {
     margin: 0px;
     padding-left: 15px;
     font-size: 15px;
+    font-weight: 300;
 }
 
 #rating {
@@ -202,6 +202,8 @@ button {
     height: 40px;
     color: white;
     margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 
