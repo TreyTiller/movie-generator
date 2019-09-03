@@ -6,14 +6,16 @@ The purpose of this app is to provide the user with a generated list of movies t
 # Landing Page
 	The user sees a short description and is introduced to site personality. 
 	User is able to fill out form and start application
-	![Screen Shot 2019-09-02 at 9 48 43 PM](https://user-images.githubusercontent.com/52612098/64139278-479ded00-cdce-11e9-9ca4-b6d7bbc44787.png)
+![Screen Shot 2019-09-02 at 9 48 43 PM](https://user-images.githubusercontent.com/52612098/64139278-479ded00-cdce-11e9-9ca4-b6d7bbc44787.png)
 
 # Results
 	User sees the top suggestions related to their movie and certain information 
 	break points were chosen based on design and mobile will show less than large format displays
+![Screen Shot 2019-09-02 at 10 13 16 PM](https://user-images.githubusercontent.com/52612098/64139440-e1fe3080-cdce-11e9-8d17-ef81abdc9e06.png)
 
 # Suggestions
 	If the API can't find a film they typed in a second chance to input is given and some movie suggestions 
+![Screen Shot 2019-09-02 at 10 12 13 PM](https://user-images.githubusercontent.com/52612098/64139405-bda25400-cdce-11e9-8960-d2fad9ef5f64.png)
 
  
     
