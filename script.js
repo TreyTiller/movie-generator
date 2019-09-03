@@ -40,6 +40,7 @@ function watchTitleForm() {
         event.preventDefault();
         let title = $('.search-bar-header').val();
         $('.error').addClass('hidden');
+        $('.user-results-screen').empty();
         console.log(`Im Working 2: ${title}`);
         getMovies(title);
     })
