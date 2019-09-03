@@ -6,11 +6,6 @@ const tasteDive = 'https://tastedive.com/api/similar';
 const omdbKey = '3e8e016d';
 const omdb = "http://www.omdbapi.com/?apikey='3e8e016d'&"
 
-const tmdbKey = "16242317e9658da6c8ea5181a70fc442"
-const tmdb = "https://api.themoviedb.org/3/search/movie?api_key=16242317e9658da6c8ea5181a70fc442&language=en-US&"
-
-/*SCRIPT FOR ALL FUNCTIONING BUTTONS*/
-
 $('.start-over').on('click', function () {
     $('.restart').removeClass('hidden');
     $('.movie-title-screen').removeClass('hidden');
@@ -21,10 +16,6 @@ $('.start-over').on('click', function () {
     $('.continous-search').addClass('hidden');
 })
 
-
-
-/*TITLE FETCH REQUEST*/
-
 function watchTitleForm() {
     $('.user-title-form').submit(event => {
         event.preventDefault();
@@ -33,7 +24,6 @@ function watchTitleForm() {
         $('.user-title-form').addClass('hidden');
         $('.continous-search').removeClass('hidden');
         $('.restart').addClass('hidden');
-        console.log(`Im Working: ${title}`);
         getMovies(title);
     });
     $('.header-form').submit(event => {
@@ -41,7 +31,6 @@ function watchTitleForm() {
         let title = $('.search-bar-header').val();
         $('.error').addClass('hidden');
         $('.user-results-screen').empty();
-        console.log(`Im Working 2: ${title}`);
         getMovies(title);
     })
 }
@@ -90,13 +79,8 @@ function titleInfo(title) {
         })
 
 }
-/*WHAT NEEDS TO HAPPEN IS THE RESULTS OF THIS GETMOVIE FUNCTION GET FED INTO AND CALL
-    A FUNCTION CALLED GETTITLEINFO WHICH REACHES OUT TO OMDB AND THEN WE USE THEIR RESPONSE
-    TO DISPLAY SUGGESTION DATA*/
 
 function displayResults(data) {
-    /*$('.user-results-screen').empty();
-    for(let i = 0; i < data.length; i++) {*/
     $('.user-results-screen').append(`
         <section class="single-result">
         <a class="full-link" href="https://www.imdb.com" target="_blank">
