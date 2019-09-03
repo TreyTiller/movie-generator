@@ -6,7 +6,7 @@ The purpose of this app is to provide the user with a generated list of movies t
 # Landing Page
 	The user sees a short description and is introduced to site personality. 
 	User is able to fill out form and start application
-	![landing page]
+	![landing page] (IMG/2001.jpg)
 
 # Results
 	User sees the top suggestions related to their movie and certain information 
