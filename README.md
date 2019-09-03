@@ -1,20 +1,30 @@
-Thinkful API HACK Capstone project (tasteDive, OmDb API)
+# Thinkful API HACK Capstone project (tasteDive, OmDb API)
 
 The purpose of this app is to provide the user with a generated list of movies to watch. The list generates based on 
 		what movie title the user searches for and relating titles with similar characteristics.
-    
-    ![Image of Yaktocat]
-    (https://github.com/TreyTiller/movie-generator/blob/master/IMG/2001.jpg)
+
+# Landing Page
+	The user sees a short description and is introduced to site personality. 
+	User is able to fill out form and start application
+	![landing page]
+
+# Results
+	User sees the top suggestions related to their movie and certain information 
+	break points were chosen based on design and mobile will show less than large format displays
+
+# Suggestions
+	If the API can't find a film they typed in a second chance to input is given and some movie suggestions 
+
  
     
-High Level User Stories:
+## High Level User Stories:
 	— User should be able to easily enter a movie title
 	— User should be able to make multiple searches with only current results displaying
 	— User should be able to see information about the film
 	— User needs to be able to limit the number of results
   
   
-  User Flows/wireframe/page layout(mobile):
+  ## User Flows/wireframe/page layout(mobile):
 	— HOME SCREEN
 		— A description of the application and how to use
 		— two button options ( generate by genre, generate by input i.e. movie title)
@@ -45,7 +55,7 @@ High Level User Stories:
 		— run again button to get more results
 
 
-User Flows/wireframe/page layout(full screen):
+## User Flows/wireframe/page layout(full screen):
 	— HOME SCREEN
 		— Title of the application
 		— short description of the application and how to use
