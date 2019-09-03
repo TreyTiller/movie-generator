@@ -48,6 +48,8 @@ body {
     padding: 5px;
     border-radius: 8px;
     border: 1px solid rgb(184, 184, 184);
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .submit {
@@ -240,8 +242,13 @@ button {
         margin-top: 30px;
     }
 
+    .search-bar {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
     .search-bar-header {
-        width: 450px;
+        max-width: 450px;
     }
 
     .submit-header {
@@ -334,10 +341,27 @@ button {
         font-size: 18px;
         height: auto;
     }
+}
 
+@media only screen and (min-width: 1000px) {
 
+    .hal-img {
+        width: 120px;
+        height: 120px;
+    }
 
+    .search-bar {
+        margin-left: 80px;
+        margin-right: 80px;
+    }
 
+    .search-bar:hover {
+        cursor: text;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
 }
 
 
