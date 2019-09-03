@@ -232,6 +232,7 @@ button {
     margin: 0 auto;
     margin-top: 20px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 
@@ -347,6 +348,7 @@ button {
         width: 270px;
         font-size: 18px;
         height: auto;
+        text-align: center;
     }
 }
 
