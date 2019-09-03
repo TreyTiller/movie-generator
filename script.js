@@ -60,33 +60,34 @@ function getMovies(title) {
         dataType: "jsonp",
         type: "GET"
     })
-    .done(function (output) {
-        if (output.Similar.Results.length == 0) {
-            $('.error').removeClass('hidden');
-            $('.movie-title-screen').addClass('hidden');
-            $('.search-bar').val("");
-            $('.continous-search').removeClass('hidden');
-            $('.restart').addClass('hidden');
-            $('.search-bar-header').val("");
-        } else {
-            for(let i = 0; i < output.Similar.Results.length; i++) {
-                titleInfo(output.Similar.Results[i].Name);
+        .done(function (output) {
+            if (output.Similar.Results.length == 0) {
+                $('.error').removeClass('hidden');
+                $('.movie-title-screen').addClass('hidden');
+                $('.search-bar').val("");
+                $('.continous-search').removeClass('hidden');
+                $('.restart').addClass('hidden');
+                $('.search-bar-header').val("");
+            } else {
+                for (let i = 0; i < output.Similar.Results.length; i++) {
+                    titleInfo(output.Similar.Results[i].Name);
+                }
+
             }
-            
-        }
-    })
+        })
 };
 
 function titleInfo(title) {
-    
+
     fetch(`https://www.omdbapi.com/?apikey=3e8e016d&t=${title}`)
-    .then(res => res.json())
-    .then(data => {console.log(data)
-    
-        displayResults(data);
-    
-})
-    
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+
+            displayResults(data);
+
+        })
+
 }
 /*WHAT NEEDS TO HAPPEN IS THE RESULTS OF THIS GETMOVIE FUNCTION GET FED INTO AND CALL
     A FUNCTION CALLED GETTITLEINFO WHICH REACHES OUT TO OMDB AND THEN WE USE THEIR RESPONSE
@@ -97,7 +98,7 @@ function displayResults(data) {
     for(let i = 0; i < data.length; i++) {*/
     $('.user-results-screen').append(`
         <section class="single-result">
-        <a class="full-link" href="${data.Website}" target="_blank">
+        <a class="full-link" href="https://www.imdb.com" target="_blank">
             <div class="poster-container">
                 <img id="poster" src="${data.Poster}" alt="Movie Poster">
             </div>
@@ -106,20 +107,26 @@ function displayResults(data) {
                     <h2 id="title">${data.Title}</h2>
                 </div>
 
+                <hr class="first"></hr>
+
+                <div class="director-container">
+                    <h4 id="director">Director: ${data.Director}</h4>
+                </div>
+
+                <div class="actors-container">
+                    <h4 id="actors">${data.Actors}</h4>
+                </div>
+
+                <div class="rating-container">
+                    <img class="imdb-symbol" src="IMG/icons8-imdb-100.png" alt=""><h5 id="rating">${data.imdbRating}</h5>
+                </div>
+
+
+                <hr class="second"></hr>
+        
                 <div class="description-container">
                     <h3 id="description">${data.Plot}</h3>
                 </div>
-            
-            <div class="extra-container">
-                <div class="rating-container">
-                    <h5 id="rating">${data.Metascore}</h5>
-                </div>
-
-                <div class="learn-more-container">
-                    <a id="learn-more" href="${data.Website}" target="_blank">Learn More</a>
-                </div>
-            </div>
-            </div>
             </a>
         </section>
     `);
