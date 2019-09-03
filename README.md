@@ -1,19 +1,21 @@
-# Thinkful API HACK Capstone project (tasteDive, OmDb API)
+# Movie Generator - https://treytiller.github.io/movie-generator/
+
+## Thinkful API HACK Capstone project (tasteDive, OmDb API)
 
 The purpose of this app is to provide the user with a generated list of movies to watch. The list generates based on 
 		what movie title the user searches for and relating titles with similar characteristics.
 
-# Landing Page
+## Landing Page
 	The user sees a short description and is introduced to site personality. 
 	User is able to fill out form and start application
 ![Screen Shot 2019-09-02 at 9 48 43 PM](https://user-images.githubusercontent.com/52612098/64139278-479ded00-cdce-11e9-9ca4-b6d7bbc44787.png)
 
-# Results
+## Results
 	User sees the top suggestions related to their movie and certain information 
 	break points were chosen based on design and mobile will show less than large format displays
 ![Screen Shot 2019-09-02 at 10 13 16 PM](https://user-images.githubusercontent.com/52612098/64139440-e1fe3080-cdce-11e9-8d17-ef81abdc9e06.png)
 
-# Suggestions
+## Suggestions
 	If the API can't find a film they typed in a second chance to input is given and some movie suggestions 
 ![Screen Shot 2019-09-02 at 10 12 13 PM](https://user-images.githubusercontent.com/52612098/64139405-bda25400-cdce-11e9-8960-d2fad9ef5f64.png)
 
@@ -24,6 +26,12 @@ The purpose of this app is to provide the user with a generated list of movies t
 	— User should be able to make multiple searches with only current results displaying
 	— User should be able to see information about the film
 	— User needs to be able to limit the number of results
+	
+## Technologies Used:
+	HTML/CSS/JavaScript/jQuery
+		This project mostly runs off of JavaScript/ jQuery. The initial set up has a simple html markdown
+		and css styling with mobile responsive breakpoints. During the testing phase I used Postman to 
+		run request on the APIs I was planning to use. 
   
   
   ## User Flows/wireframe/page layout(mobile):
