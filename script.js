@@ -16,6 +16,10 @@ $('.start-over').on('click', function () {
     $('.continous-search').addClass('hidden');
 })
 
+$('.hide').on('click', function () {
+    $('.snackbar').addClass('hidden');
+})
+
 function watchTitleForm() {
     $('.user-title-form').submit(event => {
         event.preventDefault();
@@ -119,10 +123,10 @@ function displayResults(data) {
             </a>
         </section>
     `);
+    $('.snackbar').removeClass('hidden');
     $('.user-results-screen').removeClass('hidden');
     $('.restart-footer').removeClass('hidden');
     $('.movie-title-screen').addClass('hidden');
-    
 }
 
 

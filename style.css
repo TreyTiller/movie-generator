@@ -26,6 +26,12 @@
       100%{transform: rotate(360deg); }
   }
 
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+
+
 body {
     background-image: linear-gradient( rgba(29, 29, 29, 0.5), rgba(27, 27, 27, 0.5)), url(IMG/movie-theater-background.jpg);
     background-repeat: no-repeat; 
@@ -400,6 +406,28 @@ button {
         margin-left: 100px;
         margin-right: 100px;
     }
+
+    .snackbar {
+        min-width: 250px;
+        margin-left: -125px; /* Divide value of min-width by 2 */
+        background-color: rgba(0, 0, 0, 0.493); /* Black background color */
+        color: #fff; /* White text color */
+        text-align: center; /* Centered text */
+        border-radius: 2px; /* Rounded borders */
+        padding: 16px; /* Padding */
+        position: fixed; /* Sit on top of the screen */
+        z-index: 1; /* Add a z-index if needed */
+        left: 50%; /* Center the snackbar */
+        bottom: 30px; /* 30px from the bottom */
+      }
+
+      .hide {
+          margin:4px;
+          background: transparent;
+          border: none;
+          color: white;
+          font-weight: 200;
+      }
 
 }
 
