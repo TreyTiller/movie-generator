@@ -11,6 +11,21 @@
     display: none;
 }
 
+.loader {
+    border: 5px solid rgba(255, 249, 249, 0.664);
+    border-radius: 50%;
+    border-top: 5px solid rgba(172, 0, 0, 0.349);
+    animation: spin 2s linear infinite;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+  }
+
+  @keyframes spin {
+      0% {transform: rotate(0deg); }
+      100%{transform: rotate(360deg); }
+  }
+
 body {
     background-image: linear-gradient( rgba(29, 29, 29, 0.5), rgba(27, 27, 27, 0.5)), url(IMG/movie-theater-background.jpg);
     background-repeat: no-repeat; 

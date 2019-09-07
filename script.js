@@ -19,9 +19,10 @@ $('.start-over').on('click', function () {
 function watchTitleForm() {
     $('.user-title-form').submit(event => {
         event.preventDefault();
+        $('.loader').removeClass('hidden')
         let title = $('.search-bar').val();
         $('.introduction').addClass('hidden');
-        $('.user-title-form').addClass('hidden');
+        $('.movie-title-screen').addClass('hidden');
         $('.continous-search').removeClass('hidden');
         $('.restart').addClass('hidden');
         getMovies(title);
@@ -29,6 +30,8 @@ function watchTitleForm() {
     $('.header-form').submit(event => {
         event.preventDefault();
         let title = $('.search-bar-header').val();
+        $('.restart-footer').addClass('hidden');
+        $('.loader').removeClass('hidden')
         $('.error').addClass('hidden');
         $('.user-results-screen').empty();
         getMovies(title);
@@ -73,6 +76,7 @@ function titleInfo(title) {
         .then(res => res.json())
         .then(data => {
             console.log(data)
+            $('.loader').addClass('hidden');
 
             displayResults(data);
 
@@ -118,8 +122,9 @@ function displayResults(data) {
     $('.user-results-screen').removeClass('hidden');
     $('.restart-footer').removeClass('hidden');
     $('.movie-title-screen').addClass('hidden');
+    
 }
 
 
 
-$(watchTitleForm)
+$(watchTitleForm);
