@@ -60,6 +60,7 @@ function getMovies(title) {
         .done(function (output) {
             if (output.Similar.Results.length == 0) {
                 $('.error').removeClass('hidden');
+                $('.loader').addClass('hidden');
                 $('.movie-title-screen').addClass('hidden');
                 $('.search-bar').val("");
                 $('.continous-search').removeClass('hidden');
@@ -78,14 +79,9 @@ function titleInfo(title) {
 
     fetch(`https://www.omdbapi.com/?apikey=3e8e016d&t=${title}`)
         .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            $('.loader').addClass('hidden');
-
-            displayResults(data);
-
-        })
-
+        .then(data => { console.log(data)
+            $('.loader').addClass('hidden')
+            displayResults(data)})
 }
 
 function displayResults(data) {
