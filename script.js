@@ -76,7 +76,6 @@ function getMovies(title) {
 };
 
 function titleInfo(title) {
-
     fetch(`https://www.omdbapi.com/?apikey=3e8e016d&t=${title}`)
         .then(res => res.json())
         .then(data => { console.log(data)
