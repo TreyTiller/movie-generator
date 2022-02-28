@@ -1,10 +1,39 @@
 'use strict'
 
+//const { title } = require("process");
+
 const tdApiKey = '344207-MovieGen-7ZJ76CWA';
 const tasteDive = 'https://tastedive.com/api/similar';
 
 const omdbKey = '3e8e016d';
 const omdb = "http://www.omdbapi.com/?apikey='3e8e016d'&"
+
+//SPLASH SCREEN TO DISAPPEAR ON BUTTON CLICK
+$('.entrance').on('click', function () {
+    $('.dashboard').removeClass('hidden');
+    $('.introduction').addClass('hidden');
+
+})
+
+//DASH SEARCH BAR CLICKED
+$('.dash-search-butt').on('click', function () {
+    $('.dashboard').addClass('hidden');
+    $('.user-search').removeClass('hidden');
+    //$('.continous-search').removeClass('hidden');
+})
+
+$('.close').on('click', function() {
+    $('.user-results-screen').addClass('hidden');
+    $('.continous-search').addClass('hidden');
+    $('.dashboard').removeClass('hidden');
+    $('.search-bar').val("");
+    $('.search-bar-header').val("");
+    $('.user-results-screen').empty();
+    $('.error').addClass('hidden');
+})
+
+
+
 
 $('.start-over').on('click', function () {
     $('.restart').removeClass('hidden');
@@ -16,6 +45,7 @@ $('.start-over').on('click', function () {
     $('.continous-search').addClass('hidden');
 })
 
+
 $('.hide').on('click', function () {
     $('.snackbar').addClass('hidden');
 })
@@ -25,7 +55,7 @@ function watchTitleForm() {
         event.preventDefault();
         $('.loader').removeClass('hidden')
         let title = $('.search-bar').val();
-        $('.introduction').addClass('hidden');
+        $('.dashboard').addClass('hidden');
         $('.movie-title-screen').addClass('hidden');
         $('.continous-search').removeClass('hidden');
         $('.restart').addClass('hidden');
@@ -78,42 +108,39 @@ function getMovies(title) {
 function titleInfo(title) {
     fetch(`https://www.omdbapi.com/?apikey=3e8e016d&t=${title}`)
         .then(res => res.json())
-        .then(data => { console.log(data)
+        .then(data => {
+            console.log(data)
             $('.loader').addClass('hidden')
-            displayResults(data)})
+            displayResults(data)
+        })
 }
 
 function displayResults(data) {
     $('.user-results-screen').append(`
         <section class="single-result">
-        <a class="full-link" href="https://www.imdb.com" target="_blank">
             <div class="poster-container">
                 <img id="poster" src="${data.Poster}" alt="Movie Poster">
             </div>
             <div class="main-container">
                 <div class="title-container">
-                    <h2 id="title">${data.Title}</h2>
+                    <h2  id="title">${data.Title}</h2>
                 </div>
-
-                <hr class="first"></hr>
-
-                <div class="director-container">
-                    <h4 id="director">Director: ${data.Director}</h4>
-                </div>
-
-                <div class="actors-container">
-                    <h4 id="actors">${data.Actors}</h4>
-                </div>
-
+            <div class="sub-container">
                 <div class="rating-container">
-                    <img class="imdb-symbol" src="IMG/icons8-imdb-100.png" alt=""><h5 id="rating">${data.imdbRating}</h5>
+                    <p id="rating">${data.Rated}</p>
                 </div>
 
+                <div class="score-container">
+                <img src="IMG/rotten-tomatoes-rating-icons-3@2x 1.png">
+                    <p id="score">${data.Metascore}</p>
+                </div>
 
-                <hr class="second"></hr>
-        
-                <div class="description-container">
-                    <h3 id="description">${data.Plot}</h3>
+                <div class="year-container">
+                    <p id="year">${data.Year}</p>
+                </div>
+            </div>
+            <div class="actors-container">
+                    <p id="actors">${data.Genre}</p>
                 </div>
             </a>
         </section>
@@ -123,7 +150,5 @@ function displayResults(data) {
     $('.restart-footer').removeClass('hidden');
     $('.movie-title-screen').addClass('hidden');
 }
-
-
 
 $(watchTitleForm);

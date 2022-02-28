@@ -8,8 +8,9 @@
     <meta name="description" content="Generate a movie based on what genres you like or similarity!">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Catamaran:200,300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    
+
     <title>Movie Generator | Let Hal Help You Find Your Next Movie Night</title>
 </head>
 
@@ -17,37 +18,79 @@
 
     <header class="continous-search hidden">
         <form class="header-form">
-            <input class="search-bar-header" type="text" placeholder="Movie Title" required>
-            <button type="submit-header" class="submit-header">Submit</button>
+            <div class="input-icons">
+                <i class="fa fa-search icon"></i>
+                <input class="search-bar-header" type="text" placeholder="Movie Title" required autofocus>
+            </div>
         </form>
+        <i class="fa fa-times fa-lg close"></i>
     </header>
 
+    <!--SPLASH SCREEN-->
     <section class="introduction">
-        <div class="hal">
-            <img class="hal-img" src="IMG/icons8-hal-9000-100.png" alt="Hal Robot Icon">
+        <div class="splash-graphics">
+            <h1 class="title">TITLE/LOGO</h1>
+            <img class="couch-img" src="IMG/IMG_0035.png" alt="Man on couch with popcorn">
         </div>
-        <h3 class="hal-intro"> I'm Hal! You might know me from Stanley Kubrik's 2001: A Space Odyssey! I've been
-            reprogrammed to help you
-            find amazing movies to watch. I use intensive machine learning and cultural mapping to find the best movies.
-            All you have to do is enter a movie title, and I'll suggest some
-            films that you might enjoy!
-        </h3>
+        <h2 class="intro-head">This is an Intro</h2>
+        <h3 class="intro-sub">Quis id nisi culpa consequat dolor ipsum occaecat duis amet.</h3>
+        <button class="entrance">Find my next must see!</button>
     </section>
 
-    <section class="restart hidden">
-        <div class="hal">
-            <img class="hal-img" src="IMG/icons8-hal-9000-100.png" alt="Hal Robot Icon">
+    <!--HOME SCREEN-->
+    <section class="dashboard hidden">
+        <div class="main-hero">
+            <h1 class="quip"><span class="highlight">Movie suggestions </span> based on what you search</h1>
+            <form class="user-title-form">
+                <div class="input-icons">
+                    <i class="fa fa-search icon"></i>
+                    <input class="search-bar" type="text" placeholder="Find similar movies as:" required>
+                </div>
+            </form>
         </div>
-        <h3 class="restart-text">Oh, I'm having fun! Let's do another one!</h3>
+        <div class="daily-pick">
+            <h2 class="sub-head">Daily Picks</h2>
+            <div class="daily-cards">
+                <img src="IMG/batman.jpg" class="picks">
+                <img src="IMG/batman.jpg" class="picks">
+                <img src="IMG/batman.jpg" class="picks">
+                <img src="IMG/batman.jpg" class="picks">
+                <img src="IMG/batman.jpg" class="picks">
+            </div>
+        </div>
+        <div class="genres">
+            <h2 class="sub-head">Top Genres</h2>
+            <div class="top-genre-cards">
+                <img src="IMG/scifi-card.png" class="genre">
+                <img src="IMG/action-card.png" class="genre">
+                <img src="IMG/comedy-card.png" class="genre">
+                <img src="IMG/Thriller-card.png" class="genre">
+            </div>
+            <h2 class="sub-head">All Genres</h2>
+            <div class="all-genre-cards">
+                <img src="IMG/adventure-card.png" class="genre">
+                <img src="IMG/doc-card.png" class="genre">
+                <img src="IMG/drama-card.png" class="genre">
+                <img src="IMG/indie-card.png" class="genre">
+                <img src="IMG/animation-card.png" class="genre">
+                <img src="IMG/romance-card.png" class="genre">
+                <img src="IMG/western-card.png" class="genre">
+                <img src="IMG/musical-card.png" class="genre">
+            </div>
+        </div>
     </section>
 
+
+
+    <!--ERROR SCREEN FOR WHEN SEARCH IS TYPED WRONG-->
     <section class="error hidden">
-        <div class="hal-error-container">
-            <img class="hal-img" src="IMG/icons8-hal-9000-100.png" alt="Hal Robot Icon">
+        <div class="error-splash-container">
+            <img class="error-img" src="IMG/IMG_0034.png" alt="Guy standing with camera" width="250" height="auto">
         </div>
-        <h3 class="hal-error">Hmmmmmm...<br>I can't seem to find that one. Make sure your spelling is correct and try
-            again, or you can try a movie from my list of must sees!
-        </h3>
+        <h2 class="error-head">Looks like that one hasn't been made yet</h2>
+        <h3 class="error-sub">Be sure to check your spelling! Use the features below if you're giving up.</h3>
+        <button class="randomizer">Pick for me!</button>
+        <h2 class="sub-head-err">Our Suggestions</h2>
         <ul class="suggestions">
             <li><a href="https://www.themoviedb.org/movie/62-2001-a-space-odyssey?language=en-US" target="_blank">
                     <img class="poster" src="IMG/2001.jpg" alt="2001: A Space Odyssey">
@@ -94,13 +137,48 @@
             <li><a href="https://www.themoviedb.org/movie/244786-whiplash?language=en-US" target="_blank">
                     <img class="poster" src="IMG/whiplash.jpg" alt="Whiplash">
                 </a></li>
-            <li><a href="https://www.themoviedb.org/movie/146-wo-hu-cang-long?language=en-US" target="_blank">
-                    <img class="poster" src="IMG/crouch.jpg" alt="Crouching Tiger, Hidden Dragon">
-                </a></li>
         </ul>
     </section>
 
-    <section class="movie-title-screen">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="restart hidden">
+        <div class="hal">
+            <img class="hal-img" src="IMG/icons8-hal-9000-100.png" alt="Hal Robot Icon">
+        </div>
+        <h3 class="restart-text">Oh, I'm having fun! Let's do another one!</h3>
+    </section>
+
+    
+    <section class="movie-title-screen hidden">
         <form class="user-title-form">
             <input class="search-bar" type="text" placeholder="Movie Title" required>
             <button type="submit" class="submit">Submit</button>
@@ -112,9 +190,11 @@
 
     <section class="user-results-screen hidden"></section>
 
-    <nav class="restart-footer hidden">
+    <section class="result-detail-screen hidden"></section>
+
+    <!-- <nav class="restart-footer hidden">
         <button class="start-over">Start Over</button>
-    </nav>
+    </nav> -->
     <script src="script.js"></script>
 </body>
 
