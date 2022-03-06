@@ -32,10 +32,10 @@ $('.close').on('click', function() {
     $('.error').addClass('hidden');
 })
 
-$('.genre').on('click', function() {
-    $('.dashboard').addClass('hidden');
-    $('.scifi-page').removeClass('hidden');
-})
+// $('.genre').on('click', function() {
+//     $('.dashboard').addClass('hidden');
+//     $('.scifi-page').removeClass('hidden');
+// })
 
 
 $('.start-over').on('click', function () {
